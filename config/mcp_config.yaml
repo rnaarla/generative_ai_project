@@ -1,0 +1,9 @@
+context_window: 8192
+token_budget_strategy: dynamic
+input_preprocessors:
+  - strip_html
+  - normalize_whitespace
+contextual_memory:
+  enabled: true
+  provider: redis
+  retention_policy: sliding_window
