@@ -1,0 +1,15 @@
+protocol_version: 1.0
+agents:
+  planner:
+    capabilities: [task_decomposition, routing]
+    endpoint: http://localhost:9001
+  executor:
+    capabilities: [code_execution, validation]
+    endpoint: http://localhost:9002
+  summarizer:
+    capabilities: [summarization, ranking]
+    endpoint: http://localhost:9003
+communication_rules:
+  timeout: 15s
+  max_retries: 3
+  fallback: fail_silently
